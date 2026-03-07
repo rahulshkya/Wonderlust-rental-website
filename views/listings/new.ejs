@@ -1,0 +1,75 @@
+<% layout('layouts/boilerplate') %>
+<body>
+    <div class="row">
+        <div class="col-6">
+    <h1>Create a new listing</h1>
+    <form method="POST" action="/listing/new" noValidate class="needs-validation" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input  placeholder="Add a catchy title"
+          name="list[title]" 
+          type="text" 
+          class="form-control" 
+          required> 
+          <div class="valid-feedback">title looks good</div>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea  name="list[description]" 
+            type="text"
+            class="form-control"
+            required></textarea>
+            <div class="invalid-feedback">please enter description</div>
+        </div>
+           
+
+            <div class="mb-3">
+              <label for="image" class="form-label">Upload Image</label>
+              <input class="form-control" 
+              placeholder="enter image" 
+              name="list[image]"
+              type="file" 
+              required>
+             
+          </div>
+        <div class="mb-3 d-flex gap-3">
+  <div style="flex: 0 0 30%;">
+     <label for="price" class="form-label">Price</label>
+     <input class="form-control"
+      name="list[price]" 
+      placeholder="2000"
+      required>
+      <div class="invalid-feedback">please enter a valid price</div>
+  </div>
+
+  <div style="flex: 0 0 66.8%;">
+    <label for="country" class="form-label">Country</label>
+    <input class="form-control"
+     name="list[country]" 
+     type="text" 
+     placeholder="India"
+     required>
+     <div class="invalid-feedback">country name should be valid</div>
+  </div>
+</div>
+          <div class="mb-3">
+
+            <input id="locationInput" placeholder="Enter location (e.g. Malibu, California)" />
+<button onclick="showLocation()">Add Post</button>
+
+            <label for="location" class="form-label">Location</label>
+            <input placeholder="enter location" 
+            name="list[location]"
+            type="text" 
+            class="form-control"
+            required>
+            <div class="invalid-feedback">Location should be valid</div>
+          </div>
+           
+    <br>
+    <br>
+         <button class="add-btn">Create</button>
+    </form>
+    </div>
+    </div>
+</body>

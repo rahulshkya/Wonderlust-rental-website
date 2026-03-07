@@ -1,0 +1,70 @@
+<% layout('/layouts/boilerplate') %> 
+
+<style>
+  .filter{
+    margin-top: 1rem;
+    margin-left:7rem;
+  }
+  .filters{
+   display:flex;     
+  }
+
+  
+</style>
+    <!-- <h1>All listings</h1> -->
+     <div class="filters">
+      <div class="filter">
+       <div> <i class="fa-solid fa-fire"></i></div>
+       <p>Trending</p> 
+      </div>
+      <div class="filter room">
+        <div><i class="fa-solid fa-bed"></i></div>
+        <p>rooms</p> 
+       </div>
+       <div class="filter">
+        <div><i class="fa-solid fa-city"></i></div>
+        <p>City</p> 
+       </div>
+       <div class="filter">
+        <div><i class="fa-solid fa-mountain"></i></div>
+        <p>mountain</p> 
+       </div>
+       <div class="filter">
+        <div><i class="fa-brands fa-fort-awesome"></i></div>
+        <p>castles</p> 
+       </div>
+       <div class="filter">
+        <div><i class="fa-solid fa-water-ladder"></i></div>
+        <p>amazing pools</p> 
+       </div>
+       <div class="filter">
+        <div><i class="fa-solid fa-tractor"></i></div>
+        <p>farms</p> 
+       </div>
+     </div>
+    <br>
+
+    <div class="row row-cols-lg-3 row cols-md-2 mt-3">
+<%for(let listing of allListing){%>
+<div class="card" style="width: 18rem;">
+ <a href="/listing/<%=listing._id%>"><img src="<%=listing.image.url%>" class="card-img-top index-img" alt="..."
+  style="height: 20rem;"></a> 
+  <a class="list-link" href="/listing/<%=listing._id%>">
+  <div class="card-body">
+    <div class="card-img-overlay"> </div>
+   <b><h5 class="card-title"><%=listing.title%></h5></b>
+   <p class="card-text">
+  <% if (listing.price) { %>
+    <p> Price : &#8377; <%= listing.price.toLocaleString("en-IN") %> / night</p></li>
+<% } else { %>
+    <p> Price : Not specified</p></li>
+<% } %>
+
+</p>
+  </div>
+  </a>
+</div>
+<%}%>
+</div>
+   
+

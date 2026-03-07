@@ -1,0 +1,16 @@
+#map {
+    height: 500px;
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 10px;
+  }
+
+  input {
+    width: 300px;
+    padding: 8px;
+  }
+
+  button {
+    padding: 8px 12px;
+    cursor: pointer;
+  }
