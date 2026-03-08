@@ -66,8 +66,7 @@ Project ka structure **MVC (Model-View-Controller)** pattern par based hai.
 
 
 ### 3. Initialize Database (Crucial Step) 🛠️
-
-Website ko start karne se pehle, database mein sample listings load karni padengi. Iske liye `init` folder ka use karein:
+Before starting the website, you'll need to load sample listings into the database. Use the `set` folder for this.:
 
 ```bash
 cd init
